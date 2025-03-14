@@ -25,19 +25,16 @@ public class TransactionController {
 
     @PostMapping
     public Mono<Transaction> createTransaction(
-            @RequestParam("transactionTime") String transactionTime,
-            @RequestParam("customerId") Long customerId,
-            @RequestParam("quantity") Integer quantity,
-            @RequestParam("productCode") String productCode) {
+            @RequestBody Transaction transaction) {
 
-        LocalDateTime transactionDateTime = LocalDateTime.parse(transactionTime);
+        //LocalDateTime transactionDateTime = LocalDateTime.parse(transactionTime);
 
         // Validation: Date must not be in the past
-        if (transactionDateTime.isBefore(LocalDateTime.now())) {
+        if (transaction.getTransactionTime().isBefore(LocalDateTime.now())) {
             return Mono.error(new IllegalArgumentException("Transaction date must not be in the past."));
         }
 
-        return productService.getProductById(productCode)
+        return productService.getProductById(transaction.getProductCode())
                 .flatMap(product -> {
                     // Validation: Product must be active
                     if (!"Active".equalsIgnoreCase(product.getStatus())) {
@@ -45,16 +42,12 @@ public class TransactionController {
                     }
 
                     // Validation: Total cost of transaction must not exceed 5000
-                    double totalCost = quantity * product.getCost();
+                    double totalCost = transaction.getQuantity() * product.getCost();
                     if (totalCost > 5000) {
                         return Mono.error(new IllegalArgumentException("Total cost of transaction must not exceed 5000."));
                     }
 
-                    Transaction transaction = new Transaction();
-                    transaction.setTransactionTime(transactionDateTime);
-                    transaction.setCustomerId(customerId);
-                    transaction.setQuantity(quantity);
-                    transaction.setProductCode(productCode);
+                    transaction.setCost(totalCost);
 
                     return transactionService.saveTransaction(transaction);
                 });

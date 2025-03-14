@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "7b46c5b9-699f-4d44-b846-7e6a91146454",
+		"name": "SalesReport-Tabcorp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "997697"
+	},
+	"item": [
+		{
+			"name": "Save transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"10001\",\r\n    \"quantity\": 1,\r\n    \"productCode\": \"PRODUCT_005\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get total cost per customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"104567\",\r\n    \"quantity\": 1,\r\n    \"productCode\": \"PRODUCT_001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transactions/total-cost/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"total-cost",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get total cost per product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"104567\",\r\n    \"quantity\": 1,\r\n    \"productCode\": \"PRODUCT_001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transactions/total-cost/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"total-cost",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get count of transaction for Australian customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"104567\",\r\n    \"quantity\": 1,\r\n    \"productCode\": \"PRODUCT_001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transactions/count/australian-customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"count",
+						"australian-customers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

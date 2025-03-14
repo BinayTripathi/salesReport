@@ -38,11 +38,13 @@ INSERT INTO product (product_code, cost, status) VALUES
 ----------------------------------------------------------------
 -- Transaction table creation. Data will be pushed per API call
 ---------------------------------------------------------------
-CREATE TABLE transactions (
+CREATE TABLE transaction (
   id INT AUTO_INCREMENT PRIMARY KEY,
   transaction_time TIMESTAMP NOT NULL,
   customer_id BIGINT NOT NULL,
   quantity INT NOT NULL,
-  product_code VARCHAR(255) NOT NULL
+  product_code VARCHAR(255) NOT NULL,
+  cost FLOAT NOT NULL
 );
 
+CREATE SEQUENCE TRANSACTION_SEQ START WITH 1 INCREMENT BY 50;

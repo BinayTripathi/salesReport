@@ -24,4 +24,5 @@ public class Transaction {
     private Long customerId;
     private Integer quantity;
     private String productCode;
+    private Double cost;
 }
