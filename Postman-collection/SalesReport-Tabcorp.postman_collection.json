@@ -14,7 +14,7 @@
 					"oauth2": [
 						{
 							"key": "clientSecret",
-							"value": "VvVUHYoLoNxq28ZwUESHOsoHSPfZ3pXJ",
+							"value": "{{client_secret}}",
 							"type": "string"
 						},
 						{
@@ -74,7 +74,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"10001\",\r\n    \"quantity\": 1,\r\n    \"productCode\": \"PRODUCT_005\"\r\n}",
+					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"10002\",\r\n    \"quantity\": 2,\r\n    \"productCode\": \"PRODUCT_005\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -105,7 +105,7 @@
 					"oauth2": [
 						{
 							"key": "clientSecret",
-							"value": "VvVUHYoLoNxq28ZwUESHOsoHSPfZ3pXJ",
+							"value": "{{client_secret}}",
 							"type": "string"
 						},
 						{
@@ -198,7 +198,7 @@
 					"oauth2": [
 						{
 							"key": "clientSecret",
-							"value": "VvVUHYoLoNxq28ZwUESHOsoHSPfZ3pXJ",
+							"value": "{{client_secret}}",
 							"type": "string"
 						},
 						{
@@ -290,28 +290,28 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "scope",
-							"value": "openid, profile, email",
+							"key": "clientSecret",
+							"value": "{{client_secret}}",
 							"type": "string"
 						},
 						{
-							"key": "clientSecret",
-							"value": "NVA5hrFNDqACwK-BXzAKiebIqQvs891pCMpcrsyegotYP7TWrLghfHRobsOxuOUb",
+							"key": "scope",
+							"value": "profile email",
 							"type": "string"
 						},
 						{
 							"key": "clientId",
-							"value": "0oanuocpugTGeNgEf5d7",
+							"value": "salesreport-tabcorp",
 							"type": "string"
 						},
 						{
 							"key": "accessTokenUrl",
-							"value": "https://dev-75030214.okta.com/oauth2/default/v1/token",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
 							"key": "authUrl",
-							"value": "https://dev-75030214.okta.com/oauth2/default/v1/authorize",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/auth",
 							"type": "string"
 						},
 						{
@@ -332,6 +332,11 @@
 						{
 							"key": "addTokenTo",
 							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
 							"type": "string"
 						}
 					]
@@ -367,6 +372,110 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenName",
+				"value": "salesreport-tabcorp",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "profile email",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://www.postman.com/oauth2/callback",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "salesreport-tabcorp",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/auth",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_secret",
+			"value": "XXM5kHKPYlfkGBrXO3W3ZRle0UIw24VL",
+			"type": "string"
 		}
 	]
 }
