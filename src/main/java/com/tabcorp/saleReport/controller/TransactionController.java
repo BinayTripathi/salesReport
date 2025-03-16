@@ -5,6 +5,7 @@ import com.tabcorp.saleReport.model.Product;
 import com.tabcorp.saleReport.model.Transaction;
 import com.tabcorp.saleReport.service.ProductService;
 import com.tabcorp.saleReport.service.TransactionService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
@@ -15,10 +16,11 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/transactions")
+@AllArgsConstructor
 public class TransactionController {
 
     @Autowired
-    private TransactionService transactionService;
+    private final TransactionService transactionService;
 
     @Autowired
     private ProductService productService;

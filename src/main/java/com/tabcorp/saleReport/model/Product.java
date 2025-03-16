@@ -15,6 +15,6 @@ import lombok.AllArgsConstructor;
 public class Product {
     @Id
     private String productCode;
-    private Integer cost;
+    private Double cost;
     private String status;
 }

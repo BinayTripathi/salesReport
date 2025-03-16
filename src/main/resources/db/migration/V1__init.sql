@@ -22,7 +22,7 @@ INSERT INTO customer (customer_id, first_name, last_name, email, location) VALUE
 -----------------------------------------
 CREATE TABLE product (
    product_code VARCHAR(255) PRIMARY KEY,
-   cost INT NOT NULL,
+   cost NUMERIC(10, 2) NOT NULL,
    status VARCHAR(255) NOT NULL
 );
 

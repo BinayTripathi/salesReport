@@ -17,8 +17,9 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) throws Exception {
         http
-                .authorizeExchange(exchanges ->
-                        exchanges.anyExchange().authenticated())
+                .authorizeExchange(exchanges -> exchanges
+                        .anyExchange().authenticated() // Secure all other endpoints
+                )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(Customizer.withDefaults())
                 ); // Enable JWT for resource server
