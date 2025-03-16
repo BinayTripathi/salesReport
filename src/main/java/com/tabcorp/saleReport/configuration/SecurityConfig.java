@@ -3,6 +3,7 @@ package com.tabcorp.saleReport.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -15,11 +16,12 @@ public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
+        http
                 .authorizeExchange(exchanges ->
                         exchanges.anyExchange().authenticated())
-                .oauth2Login(oAuth2LoginSpec -> {})                 // Enable OAuth2 login
-                .oauth2ResourceServer(ServerHttpSecurity.OAuth2ResourceServerSpec::jwt); // Enable JWT for resource server
+                .oauth2ResourceServer(oauth2 -> oauth2
+                        .jwt(Customizer.withDefaults())
+                ); // Enable JWT for resource server
         return http.build();
     }
 }
