@@ -15,7 +15,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable());
+        http.csrf(csrf -> csrf.disable())
+                .authorizeExchange(exchanges ->
+                        exchanges.anyExchange().authenticated())
+                .oauth2Login(oAuth2LoginSpec -> {})                 // Enable OAuth2 login
+                .oauth2ResourceServer(ServerHttpSecurity.OAuth2ResourceServerSpec::jwt); // Enable JWT for resource server
         return http.build();
     }
 }

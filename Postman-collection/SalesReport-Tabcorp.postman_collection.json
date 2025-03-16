@@ -9,6 +9,61 @@
 		{
 			"name": "Save transaction",
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "VvVUHYoLoNxq28ZwUESHOsoHSPfZ3pXJ",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "profile email",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "clientId",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.postman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -27,11 +82,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/transactions",
+					"raw": "localhost:8081/transactions",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"transactions"
 					]
@@ -45,6 +100,61 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "VvVUHYoLoNxq28ZwUESHOsoHSPfZ3pXJ",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "profile email",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "clientId",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.postman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -63,11 +173,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/transactions/total-cost/customer",
+					"raw": "localhost:8081/transactions/total-cost/customer",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"transactions",
 						"total-cost",
@@ -83,6 +193,61 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "VvVUHYoLoNxq28ZwUESHOsoHSPfZ3pXJ",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "profile email",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "clientId",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/realms/Tabcorp/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.postman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -101,11 +266,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/transactions/total-cost/product",
+					"raw": "localhost:8081/transactions/total-cost/product",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"transactions",
 						"total-cost",
@@ -121,6 +286,56 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "openid, profile, email",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "NVA5hrFNDqACwK-BXzAKiebIqQvs891pCMpcrsyegotYP7TWrLghfHRobsOxuOUb",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "0oanuocpugTGeNgEf5d7",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://dev-75030214.okta.com/oauth2/default/v1/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://dev-75030214.okta.com/oauth2/default/v1/authorize",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.postman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "salesreport-tabcorp",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -131,7 +346,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"transactionTime\": \"2026-03-14T23:43:00\",\r\n    \"customerId\": \"104567\",\r\n    \"quantity\": 1,\r\n    \"productCode\": \"PRODUCT_001\"\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -139,11 +354,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/transactions/count/australian-customers",
+					"raw": "localhost:8081/transactions/count/australian-customers",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"transactions",
 						"count",

@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
 
-    @Query("SELECT t.customerId, t.cost FROM Transaction t GROUP BY t.customerId")
+    @Query("SELECT t.customerId, sum(t.cost) FROM Transaction t GROUP BY t.customerId")
     List<Object[]> findTotalCostPerCustomer();
 
-    @Query("SELECT t.productCode, t.cost FROM Transaction t  GROUP BY t.productCode")
+    @Query("SELECT t.productCode, sum(t.cost) FROM Transaction t  GROUP BY t.productCode")
     List<Object[]> findTotalCostPerProduct();
 
     @Query("SELECT COUNT(t) FROM Transaction t JOIN Customer c ON t.customerId = c.id WHERE c.location = 'Australia'")
